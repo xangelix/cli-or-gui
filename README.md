@@ -50,7 +50,7 @@ These features tend to pair well together.
 
 Add `cli-or-gui` to your `Cargo.toml`:
 
-```toml
+```text
 cargo add cli-or-gui
 ```
 
@@ -90,8 +90,8 @@ The `cli-or-gui` crate replaces the need for `#![windows_subsystem = "windows"]`
 
 ## Platform Support
 
-- **Windows:** Fully supported using modern raw pointer patterns (`&raw mut`) and the official `windows` crate [3].
-- **macOS & Linux:** Fully supported. Uses standard `libc` [2] for POSIX-compliant checks. macOS is covered with no additional hacks required.
+- **Windows:** Fully supported using modern raw pointer patterns (`&raw mut`) and the official `windows` crate.
+- **macOS & Linux:** Fully supported. Uses standard `libc` for POSIX-compliant checks. macOS is covered with no additional hacks required.
 
 ---
 
