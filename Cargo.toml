@@ -1,0 +1,31 @@
+[package]
+name = "cli-or-gui"
+version = "0.1.0"
+edition = "2024"
+description = "A robust, cross-platform utility to detect if an application was launched from a terminal or a GUI."
+readme = "README.md"
+license = "MIT"
+documentation = "https://docs.rs/cli-or-gui"
+repository = "https://github.com/xangelix/cli-or-gui"
+authors = ["Cody Wyatt Neiman (xangelix) <neiman@cody.to>"]
+keywords = ["windows", "cli", "gui", "terminal-detection", "hide-console"]
+categories = [
+    "command-line-interface",
+    "gui",
+    "os::windows-apis",
+    "os::unix-apis",
+    "development-tools",
+]
+
+[target.'cfg(not(windows))'.dependencies]
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.62", features = [
+    "Win32_Security",
+    "Win32_System_Console",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_ProcessStatus",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+] }
