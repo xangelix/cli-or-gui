@@ -28,7 +28,9 @@
 pub mod hide_terminal;
 pub mod is_elevated;
 pub mod is_terminal;
+pub mod relaunch_as_elevated;
 
 pub use hide_terminal::hide_console_window;
 pub use is_elevated::is_elevated;
 pub use is_terminal::is_launched_from_terminal;
+pub use relaunch_as_elevated::relaunch_as_elevated;
