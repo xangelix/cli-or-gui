@@ -1,6 +1,6 @@
 [package]
 name = "cli-or-gui"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "A robust, cross-platform utility to detect if an application was launched from a terminal or a GUI."
 readme = "README.md"
