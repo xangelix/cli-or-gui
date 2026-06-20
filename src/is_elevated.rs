@@ -1,4 +1,5 @@
 #[cfg(target_os = "windows")]
+#[must_use]
 pub fn is_elevated() -> bool {
     use windows::Win32::{
         Foundation::{CloseHandle, HANDLE},

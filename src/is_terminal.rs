@@ -140,10 +140,22 @@ fn is_parent_time_valid(child_pid: u32, parent_pid: u32) -> bool {
                 let mut dummy = FILETIME::default();
                 let mut p_created = FILETIME::default();
 
-                let c_ok = GetProcessTimes(c_h, &mut c_created, &mut dummy, &mut dummy, &mut dummy)
-                    .is_ok();
-                let p_ok = GetProcessTimes(p_h, &mut p_created, &mut dummy, &mut dummy, &mut dummy)
-                    .is_ok();
+                let c_ok = GetProcessTimes(
+                    c_h,
+                    &raw mut c_created,
+                    &raw mut dummy,
+                    &raw mut dummy,
+                    &raw mut dummy,
+                )
+                .is_ok();
+                let p_ok = GetProcessTimes(
+                    p_h,
+                    &raw mut p_created,
+                    &raw mut dummy,
+                    &raw mut dummy,
+                    &raw mut dummy,
+                )
+                .is_ok();
 
                 if c_ok && p_ok {
                     let child_time = ((c_created.dwHighDateTime as u64) << 32)
